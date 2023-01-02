@@ -1,30 +1,25 @@
 olap.xmla
 =========
-This package is meant for accessing xmla datasources - see http://en.wikipedia.org/wiki/XML_for_Analysis
 
-Example to set up a develop environment
+This package is meant for accessing xmla datasources - see
+http://en.wikipedia.org/wiki/XML\_for\_Analysis
+
+Building
 -
 
-In your workdir run:
+In this directory, run:
 
-    # create virtualenv 
-    python3 -m venv xyz
-    cd xyz
-    source bin/activate
-    git clone https://github.com/may-day/olap
-    cd olap/xmla
-    # optional if you have it already
-    pip install pipenv
-    pipenv install -dev
-    python setup.py develop
-    # now you should be good to go
-
-
+    python setup.py build
 
 Testing
 -
 
-See [HOWTO](xmla/HOWTO.md)
+Tests are done against the Mondrian, SSAS XMLA providers. The
+testsDiscover module tests behavior with different XMLA providers with
+the Discover command while testsExecute does the same with the Execute
+command. Note that you likely need to modify the sources if you want to
+test yourself since they contain specifics (namely the location of the
+services and names of the data sources).
 
 Example
 -
